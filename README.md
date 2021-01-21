@@ -1,7 +1,7 @@
 # PokemonList
+This is a small exercise where we simulate a pokedex. A list of pokemon is displayed and when you click, details about it will be shown.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
-
+<img src="https://ibb.co/b1z8gH0">
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
