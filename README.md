@@ -1,7 +1,7 @@
 # PokemonList
 This is a small exercise where we simulate a pokedex. A list of pokemon is displayed and when you click, details about it will be shown.
 
-<img src="https://ibb.co/b1z8gH0">
+<img src="https://i.ibb.co/cJD7cbB/Captura-de-pantalla-2021-01-21-a-la-s-00-27-25.png">
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
