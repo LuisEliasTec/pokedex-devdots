@@ -5,26 +5,12 @@ This is a small exercise where we simulate a pokedex. A list of pokemon is displ
 <br>
 <img src="https://i.ibb.co/NsGsLz1/Captura-de-pantalla-2021-01-21-a-la-s-00-30-07.png">
 <br>
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Run project
+To run the project it is necessary to clone the following repository: https://github.com/LuisEliasTec/pokedex-devdots.git
 
-## Code scaffolding
+## IMPORTANT: Once cloned to your local, switch to the master branch, since there are the changes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run the "npm install" command and finally the "ng serve" command on your terminal.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To see the application working go to your browser and type the url http://localhost:4200
