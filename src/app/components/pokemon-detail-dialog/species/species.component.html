@@ -1,0 +1,123 @@
+<div class="container-fluid my-2">
+  <label for="">Species information:</label>
+
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Basic happiness:</label><br><label
+          class="response-label">{{ species ? species.base_happiness : '-' }}</label>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Capture rate:</label><br><label
+          class="response-label">{{ species ? species.capture_rate : '-' }}</label>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Forms switchable:</label><br><label
+          class="response-label">{{ species ? (species.forms_switcehable ? 'Si' : 'No') : '-' }}</label>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Generation:</label><br><label
+          class="response-label">{{ species ? species.generation.name : '-' }}</label>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Color:</label><br><label class="response-label">{{ species ? species.color.name : '-' }}</label>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Egg groups:</label><br>
+        <span *ngIf="species">
+          <span *ngIf="species.egg_groups.length > 1">
+            <label class="pr-1 response-label" *ngFor="let item of species.egg_groups">{{ item.name + ',' }}</label>
+          </span>
+          <span *ngIf="species.egg_groups.length <= 1">
+            <label class="response-label" *ngFor="let item of species.egg_groups">{{ item.name }}</label>
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Growth rate:</label><br><label
+          class="response-label">{{ species ?  species.growth_rate.name : '-' }}</label>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Habitat:</label><br><label class="response-label">{{ species ? species.habitat.name : '-' }}</label>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Has gender differences:</label><br><label
+          class="response-label">{{ species ? (species.has_gender_differences ? 'Si' : 'No') : '-' }}</label>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Is legendary:</label><br><label
+          class="response-label">{{ species ? (species.is_legendary ? 'Si' : 'No') : '-' }}</label>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Is mythical:</label><br><label
+          class="response-label">{{ species ? (species.is_mythical ? 'Si' : 'No') : '-' }}</label>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Shape:</label><br><label class="response-label">{{ species ? species.shape.name : '-' }}</label>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label>Evolves from species:</label><br><label
+          class="response-label">{{ species ? (species.evolves_from_species ? species.evolves_from_species.name : '-') : '-' }}</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="species">
+    <div class="col-lg-12">
+      <label for="">Pokedex numbers:</label>
+      <table class="table table-striped mat-elevation-z1">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Entry number</th>
+            <th scope="col">Pokedex</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of species.pokedex_numbers; let i = index">
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ item.pokedex.name }}</td>
+            <td>{{ item.entry_number }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

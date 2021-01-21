@@ -1,0 +1,23 @@
+<div class="container my-2">
+  <div class="row" *ngIf="game_indices">
+    <div class="col-lg-12 my-2">
+      <label class="mt-2">Game indices:</label>
+      <table class="table table-striped mat-elevation-z1">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Game index</th>
+            <th scope="col">Version</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of game_indices; let i = index">
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ item.game_index }}</td>
+            <td>{{ item.version.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

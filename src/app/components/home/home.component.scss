@@ -1,0 +1,17 @@
+.pokemon-card {
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+.pokemon-card:hover {
+  background-color: rgba(162, 215, 228, 0.432);
+}
+
+.pokemon-card, .pokemon-card:hover {
+  cursor: pointer;
+}
+
+.pokemon-header-image {
+  background-image: url('https://www.netclipart.com/pp/m/110-1103040_pokeball-clipart-logo-pokemon-pokemon-ball-logo-png.png');
+  background-size: cover;
+}

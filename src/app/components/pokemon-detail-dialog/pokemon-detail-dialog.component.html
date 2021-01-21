@@ -1,0 +1,130 @@
+<h2 mat-dialog-title class="capitalize-text">{{ title }}</h2>
+<mat-dialog-content class="mat-typography">
+
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        General information
+      </ng-template>
+
+      <div class="container-fluid my-2" *ngIf="dialogData">
+        <div class="row">
+
+          <div class="col-lg-3 text-center">
+            <img class="img-main-pokemon" src="{{urlOfficialArtwork}}">
+          </div>
+
+          <div class="col-lg-9">
+            <label for="">General information:</label>
+
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="form-group">
+                  <label>Name:</label><br><label class="response-label">{{ dialogData ? dialogData.name : '-' }}</label>
+                </div>
+              </div>
+
+              <div class="col-lg-3">
+                <div class="form-group">
+                  <label>Weight:</label><br><label
+                    class="response-label">{{ dialogData ? dialogData.weight : '-' }}</label>
+                </div>
+              </div>
+
+              <div class="col-lg-3">
+                <div class="form-group">
+                  <label>Height:</label><br><label
+                    class="response-label">{{ dialogData ? dialogData.height : '-' }}</label>
+                </div>
+              </div>
+
+              <div class="col-lg-3">
+                <div class="form-group">
+                  <label>Base experience:</label><br><label
+                    class="response-label">{{ dialogData ? dialogData.base_experience : '-' }}</label>
+                </div>
+              </div>
+
+              <div class="col-lg-3">
+                <div class="form-group">
+                  <label>Types:</label><br>
+                  <span *ngIf="dialogData">
+                    <span *ngIf="dialogData.types.length <= 1">
+                      <label class="response-label" *ngFor="let type of dialogData.types">{{ type.type.name }}</label>
+                    </span>
+                    <span *ngIf="dialogData.types.length > 1">
+                      <label class="response-label pr-1"
+                        *ngFor="let type of dialogData.types">{{ type.type.name + ',' }}</label>
+                    </span>
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <label class="mt-2">Abilities:</label>
+            <table class="table table-striped mat-elevation-z1">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Ability</th>
+                  <th scope="col">Slot</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of dialogData.abilities; let i = index">
+                  <th scope="row">{{ i+1 }}</th>
+                  <td>{{ item.ability.name }}</td>
+                  <td>{{ item.slot }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Species
+      </ng-template>
+      <app-species [species]="species"></app-species>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Moves
+      </ng-template>
+      <app-moves [moves]="dialogData.moves"></app-moves>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Stats
+      </ng-template>
+      <app-stats [stats]="dialogData.stats"></app-stats>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Game indices
+      </ng-template>
+      <app-game-indices [game_indices]="dialogData.game_indices"></app-game-indices>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Sprites
+      </ng-template>
+      <app-sprites [sprites]="dialogData.sprites"></app-sprites>
+    </mat-tab>
+  </mat-tab-group>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

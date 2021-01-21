@@ -1,0 +1,39 @@
+<div class="container my-2">
+  <div class="row" *ngIf="moves">
+    <div class="col-lg-12 my-2" *ngFor="let move of moves">
+      <mat-accordion>
+
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Move:
+            </mat-panel-title>
+            <mat-panel-description>
+              {{ move ? move.move.name : '-' }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <div *ngIf="move.version_group_details.length > 0">
+            <table class="table table-striped mat-elevation-z1">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Move learn method</th>
+                  <th scope="col">Version group</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of move.version_group_details; let i = index">
+                  <th scope="row">{{ i+1 }}</th>
+                  <td>{{ item.move_learn_method.name }}</td>
+                  <td>{{ item.version_group.name }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>

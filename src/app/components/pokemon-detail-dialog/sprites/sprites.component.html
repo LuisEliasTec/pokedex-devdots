@@ -1,0 +1,45 @@
+<div class="container my-2">
+  <div class="row text-center" *ngIf="sprites">
+
+    <div class="col-4" *ngIf="sprites.back_default">
+      <label for="">Back default</label><br>
+      <img src="{{sprites.back_default}}" alt="">
+    </div>
+
+    <div class="col-4" *ngIf="sprites.back_female">
+      <label for="">Back female</label><br>
+      <img src="{{sprites.back_female}}" alt="">
+    </div>
+
+    <div class="col-4" *ngIf="sprites.back_shiny">
+      <label for="">Back shiny</label><br>
+      <img src="{{sprites.back_shiny}}" alt="">
+    </div>
+
+    <div class="col-4" *ngIf="sprites.back_shiny_female">
+      <label for="">Back shiny female</label><br>
+      <img src="{{sprites.back_shiny_female}}" alt="">
+    </div>
+
+    <div class="col-4" *ngIf="sprites.front_default">
+      <label for="">Front default</label><br>
+      <img src="{{sprites.front_default}}" alt="">
+    </div>
+
+    <div class="col-4" *ngIf="sprites.front_female">
+      <label for="">Front female</label><br>
+      <img src="{{sprites.front_female}}" alt="">
+    </div>
+
+    <div class="col-4" *ngIf="sprites.front_shiny">
+      <label for="">Front shiny</label><br>
+      <img src="{{sprites.front_shiny}}" alt="">
+    </div>
+    
+    <div class="col-4" *ngIf="sprites.front_shiny_female">
+      <label for="">Front shiny female</label><br>
+      <img src="{{sprites.front_shiny_female}}" alt="">
+    </div>
+    
+  </div>
+</div>

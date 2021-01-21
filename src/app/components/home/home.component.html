@@ -1,0 +1,17 @@
+<div class="container mt-2">
+  <div class="text-center">
+    <h1>¡Welcome to your pokedex!</h1>
+    <p>Select your favorite pokemon to learn more about it!</p>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let item of pokemonListArray">
+      <mat-card class="pokemon-card" (click)="setPokemonDetails(item)">
+        <mat-card-header>
+          <div mat-card-avatar class="pokemon-header-image"></div>
+          <mat-card-title class="capitalize-text pt-2">{{ item.name }}</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+</div>
